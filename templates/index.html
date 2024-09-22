@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='caminho/correto/favicon.ico') }}">
+    <title>PSQI Questionnaire</title>
+    <title>PSQI Questionnaire</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Questionário de Qualidade do Sono - PSQI</h1>
+        <form id="psqi-form" action="/submit" method="POST">
+
+            <div class="question">
+                <label for="name">Nome do participante (Social):</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+                <span class="error-message" id="birthdate-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="bedtime">1. Durante o último mês, quando você geralmente foi para a cama à noite?</label>
+                <input type="time" id="bedtime" name="bedtime" required>
+                <span class="error-message" id="bedtime-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="sleep-latency">2. Durante o último mês, quanto tempo (em minutos) você geralmente levou para dormir à noite?</label>
+                <input type="number" id="sleep-latency" name="sleep-latency" min="0" required>
+                <span class="error-message" id="sleep-latency-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="wake-time">3. Durante o último mês, quando você geralmente levantou de manhã?</label>
+                <input type="time" id="wake-time" name="wake-time" required>
+                <span class="error-message" id="wake-time-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="sleep-duration">4. Durante o último mês, quantas horas de sono você teve por noite?</label>
+                <input type="number" id="sleep-duration" name="sleep-duration" min="0" max="24" required>
+                <span class="error-message" id="sleep-duration-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="q5a">5. Durante o último mês, com que frequência você teve dificuldade para dormir porque você...</label>
+                <div class="sub-question">
+                    <label for="q5a">A) não conseguiu adormecer em até 30 minutos</label>
+                    <select id="q5a" name="q5a" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                </select>
+                <span class="error-message" id="q5a-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5b">B) acordou no meio da noite ou de manhã cedo</label>
+                    <select id="q5b" name="q5b" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5b-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5c">C) precisou levantar para ir ao banheiro</label>
+                    <select id="q5c" name="q5c" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5c-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5d">D) não conseguiu respirar confortavelmente</label>
+                    <select id="q5d" name="q5d" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5d-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5e">E) tossiu ou roncou forte</label>
+                    <select id="q5e" name="q5e" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5e-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5f">F) sentiu muito frio</label>
+                    <select id="q5f" name="q5f" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5f-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5g">G) sentiu muito calor</label>
+                    <select id="q5g" name="q5g" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5g-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5h">H) teve sonhos ruins</label>
+                    <select id="q5h" name="q5h" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5h-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5i">I) teve dor</label>
+                    <select id="q5i" name="q5i" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5i-error"></span>
+                </div>
+                    
+                <div class="sub-question">
+                    <label for="q5j">J) outra(s) razão(ões), por favor descreva: </label>
+                    <textarea id="q5j_text" name="q5j_text" placeholder="Se há outro motivo, descreva aqui..."></textarea><br>
+                    <p>Com que frequência, durante o último mês, você teve dificuldade para dormir devido a essa razão?</p>
+                    <select id="q5j" name="q5j" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Nenhuma vez</option>
+                        <option value="1">Menos de uma vez por semana</option>
+                        <option value="2">Uma ou duas vezes por semana</option>
+                        <option value="3">Três ou mais vezes na semana</option>
+                    </select>
+                    <span class="error-message" id="q5j-error"></span>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q6">6. Durante o último mês como você classificaria a qualidade do seu sono de uma maneira geral: </label>
+                <select id="q6" name="q6" required>
+                    <option value="">Selecione</option>
+                    <option value="0">Muito boa</option>
+                    <option value="1">Boa</option>
+                    <option value="2">Ruim</option>
+                    <option value="3">Muito ruim</option>
+                </select>
+                <span class="error-message" id="q6-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="q7">7. Durante o último mês, com que frequência você tomou medicamento (prescrito ou “por conta própria”) para lhe ajudara dormir?</label>
+                <select id="q7" name="q7" required>
+                    <option value="">Selecione</option>
+                    <option value="0">Nenhuma vez</option>
+                    <option value="1">Menos de uma vez por semana</option>
+                    <option value="2">Uma ou duas vezes por semana</option>
+                    <option value="3">Três ou mais vezes na semana</option>
+                </select>
+                <span class="error-message" id="q7-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="q8">8. No último mês, com que frequência você teve dificuldade para ficar acordado enquanto dirigia, comia ou participava de uma atividade social (festa, reunião de amigos, trabalho, estudo)?</label>
+                <select id="q8" name="q8" required>
+                    <option value="">Selecione</option>
+                    <option value="0">Nenhuma vez</option>
+                    <option value="1">Menos de uma vez por semana</option>
+                    <option value="2">Uma ou duas vezes por semana</option>
+                    <option value="3">Três ou mais vezes na semana</option>
+                </select>
+                <span class="error-message" id="q8-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="q9">9. Durante o último mês, quão problemático foi para você manter o entusiasmo (ânimo) para fazer as coisas (suas atividades habituais)?</label>
+                <select id="q9" name="q9" required>
+                    <option value="">Selecione</option>
+                    <option value="0">Nenhuma dificuldade</option>
+                    <option value="1">Um problema leve</option>
+                    <option value="2">Um problema razoável</option>
+                    <option value="3">Um grande problema</option>
+                </select>
+                <span class="error-message" id="q9-error"></span>
+            </div>
+
+            <div class="question">
+                <label for="q10-no">10. Você tem um(a) parceiro (esposo(a)) ou colega de quarto?</label>
+                <div class="sub-question">
+                    <label for="q10-partner-other-room">
+                        <input type="radio" id="q10-no" name="q10" value="0" required>
+                        Não
+                    </label>
+                    <span class="error-message" id="q10-error"></span>
+                </div>
+                <div class="sub-question">
+                    <label for="q10-partner-other-bed">
+                        <input type="radio" id="q10-partner-other-room" name="q10" value="1">
+                        Parceiro ou colega, mas em outro quarto
+                    </label>
+                </div>
+                <div class="sub-question">
+                    <label for="q10-partner-same-bed">
+                        <input type="radio" id="q10-partner-other-bed" name="q10" value="2">
+                        Parceiro no mesmo quarto, mas em outra cama
+                    </label>
+                </div>
+                <div class="sub-question">
+                    <label for="q10-partner-same-bed">
+                        <input type="radio" id="q10-partner-same-bed" name="q10" value="3">
+                        Parceiro na mesma cama
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js', v=1) }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados do PSQI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados do PSQI</h1>
+        <p><strong>Componente 1 (Qualidade subjetiva do sono):</strong> {{ score['component1'] }}</p>
+        <p><strong>Componente 2 (Latência do sono):</strong> {{ score['component2'] }}</p>
+        <p><strong>Componente 3 (Duração do sono):</strong> {{ score['component3'] }}</p>
+        <p><strong>Componente 4 (Eficiência habitual do sono):</strong> {{ score['component4'] }}</p>
+        <p><strong>Componente 5 (Distúrbios do sono):</strong> {{ score['component5'] }}</p>
+        <p><strong>Componente 6 (Uso de medicamentos para dormir):</strong> {{ score['component6'] }}</p>
+        <p><strong>Componente 7 (Disfunção diurna):</strong> {{ score['component7'] }}</p>
+        
+        <hr>
+
+        <h2>Pontuação Global do PSQI</h2>
+        <p><strong>Total:</strong> {{ score['global_score'] }}</p>
+
+        <a class="button__back" href="index.html">Voltar ao questionário</a>
+    </div>
+</body>
+</html>
