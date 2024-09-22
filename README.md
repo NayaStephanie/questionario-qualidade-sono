@@ -39,3 +39,5 @@ Contribuições são bem-vindas! Abra um problema para relatar bugs ou sugestõe
 
 ## Licença
 Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+![Imagem do seu projeto](Captura de tela 2024-09-22 171646.png)
