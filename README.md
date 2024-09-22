@@ -24,14 +24,19 @@ Este projeto foi desenvolvido usando as seguintes tecnologias:
 
 ## Configuração
 
-1. Crie o banco de dados: Crie um arquivo chamado psqi-form.db na pasta raiz do projeto.
-2. Inicialize o banco de dados: Execute o seguinte comando no terminal:
+1. **Crie o banco de dados:** Crie um arquivo chamado psqi-form.db na pasta raiz do projeto.
+2. **Inicialize o banco de dados:** Execute o seguinte comando no terminal:
   python app.py init_db
 
 ## Execução 
 
-1. Preencha o questionário: Preencha os campos do questionário com suas informações.
-2. Envie o questionário: Clique no botão "Enviar" para enviar as respostas.
+1. **Execute o aplicativo:** Execute o seguinte comando no terminal:
+   flask run
+2. **Acesse o aplicativo:** Acesse o aplicativo no navegador no endereço http://127.0.0.1:5000/.
+
+## Uso
+1. **Preencha o questionário:** Preencha os campos do questionário com suas informações.
+2. **Envie o questionário:** Clique no botão "Enviar" para enviar as respostas.
 
 ## Contribuições
 
